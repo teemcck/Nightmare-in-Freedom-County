@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
     [Range(0.0f, 10.0f), SerializeField] private float defaultPlayerSpeed = 2f;
@@ -8,9 +9,11 @@ public class PlayerMovement : MonoBehaviour
     // For when the environmental slow effects xd.
     [Range(0.0f, 1.0f), SerializeField] private float slownessSpeedDecrease = 0.4f;
     private bool playerSlowed = false;
+    private Rigidbody2D rb;
 
     void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         currentPlayerSpeed = defaultPlayerSpeed;
     }
 
@@ -21,24 +24,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void ProcessKeyInput()
     {
-        Vector3 newPosition = transform.position;
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        Vector2 input = Vector2.zero;
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) input.y += 1;
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) input.y -= 1;
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) input.x -= 1;
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) input.x += 1;
+
+        if (input != Vector2.zero)
         {
-           newPosition.y += currentPlayerSpeed * Time.deltaTime;
+            input.Normalize();
+            Vector2 targetPosition = rb.position + currentPlayerSpeed * Time.fixedDeltaTime * input;
+            rb.MovePosition(targetPosition);
         }
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            newPosition.x -= currentPlayerSpeed * Time.deltaTime;
-        }
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            newPosition.y -= currentPlayerSpeed * Time.deltaTime;
-        }
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            newPosition.x += currentPlayerSpeed * Time.deltaTime;
-        }
-        transform.position = newPosition;
     }
     
     public void SetSlowness(bool flag)
