@@ -11,28 +11,39 @@ public class PlayerSanityUI : MonoBehaviour
     [Header("Emotion Sprites")]
     [SerializeField] private List<Sprite> emotions1;
     [SerializeField] private List<Sprite> emotions2;
+    [SerializeField] private List<Sprite> emotions3;
 
-    [Header("Emotion Settings")]
-    [SerializeField, Tooltip("Base time between emotion swaps (seconds)")]
-    private float baseSwapInterval = 1.5f;
+    [SerializeField] private List<List<Sprite>> emotions;
 
-    [SerializeField, Tooltip("How much faster swapping gets at 0 sanity (multiplier)")]
-    private float swapSpeedMultiplier = 3f;
+    [SerializeField] private float baseSwapInterval = 0.4f;
 
-    [SerializeField, Tooltip("Maximum shake intensity at 0 sanity")]
-    private float maxShakeAmount = 5f;
+    [SerializeField] private float swapSpeedMultiplier = 3f;
+
+    [SerializeField] private float maxShakeAmount = 5f;
 
     private int currentEmotionIndex = 0;
-    private bool useFirstSet = true;
+    private int currentSubEmotionIndex = 0;
     private float swapTimer = 0f;
     private float sanityPercent = 1f; // 1 = full sanity, 0 = insane
 
     private Vector3 originalPos;
 
+    void Awake()
+    {
+        emotions = new List<List<Sprite>>
+        {
+            emotions1,
+            emotions2,
+            emotions3
+        };
+    }
+
     private void Start()
     {
         if (playerEmotion != null)
+        {
             originalPos = playerEmotion.rectTransform.localPosition;
+        }
     }
 
     private void Update()
@@ -46,7 +57,8 @@ public class PlayerSanityUI : MonoBehaviour
         if (swapTimer >= currentSwapInterval)
         {
             swapTimer = 0f;
-            useFirstSet = !useFirstSet;
+            currentSubEmotionIndex = (currentSubEmotionIndex + 1) % emotions[currentEmotionIndex].Count;
+
             UpdateDisplayedEmotion();
         }
 
@@ -68,16 +80,13 @@ public class PlayerSanityUI : MonoBehaviour
 
     public void UpdateEmotionUI(int index)
     {
-        currentEmotionIndex = Mathf.Clamp(index, 0, emotions1.Count - 1);
+        currentEmotionIndex = Mathf.Clamp(index, 0, emotions.Count - 1);
         UpdateDisplayedEmotion();
     }
 
     private void UpdateDisplayedEmotion()
     {
-        if (useFirstSet && emotions1.Count > currentEmotionIndex)
-            playerEmotion.sprite = emotions1[currentEmotionIndex];
-        else if (emotions2.Count > currentEmotionIndex)
-            playerEmotion.sprite = emotions2[currentEmotionIndex];
+        playerEmotion.sprite = emotions[currentEmotionIndex][currentSubEmotionIndex];
     }
 
     private void ApplyShake()
@@ -89,6 +98,6 @@ public class PlayerSanityUI : MonoBehaviour
 
     public int GetNumEmotions()
     {
-        return Mathf.Min(emotions1.Count, emotions2.Count);
+        return emotions.Count;
     }
 }

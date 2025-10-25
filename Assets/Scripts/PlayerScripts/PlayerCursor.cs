@@ -7,7 +7,7 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField] private Sprite interactableCursor;
 
     [SerializeField] private PlayerPosition playerPosition;
-    [SerializeField] private float interactableRange = 10f;
+    [SerializeField] private float interactableRange = 1.75f;
 
     private SpriteRenderer cursorRenderer;
     private Camera mainCam;
