@@ -9,17 +9,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private Button creditsButton;
+    [SerializeField] private Button retryButton;
 
     [Header("Fade Animation")]
     [SerializeField] private GameObject fadeOutObject;
     [SerializeField] private Animator fadeOutAnimator;
 
-
-    private void Awake()
-    {
-        startButton.onClick.AddListener(StartGame);
-        quitButton.onClick.AddListener(QuitGame);
-    }
 
     public void StartGame()
     {
@@ -29,6 +24,17 @@ public class MainMenu : MonoBehaviour
         }
 
         StartCoroutine(FadeAndLoadScene(1));
+
+    }
+
+    public void RetryGame()
+    {
+        if (fadeOutObject != null)
+        {
+            fadeOutObject.SetActive(false);
+        }
+
+        StartCoroutine(FadeAndLoadScene(2)); //GameStartScene
 
     }
 
@@ -52,5 +58,6 @@ public class MainMenu : MonoBehaviour
 
         SceneManager.LoadScene(sceneIndex);
     }
+    
 
 }

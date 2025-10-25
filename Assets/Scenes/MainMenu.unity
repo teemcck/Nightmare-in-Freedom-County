@@ -745,7 +745,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 247771395}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1599589561}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &247771395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1939,7 +1951,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1113359481}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1599589561}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1113359481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2717,6 +2741,7 @@ MonoBehaviour:
   startButton: {fileID: 1113359480}
   quitButton: {fileID: 247771394}
   creditsButton: {fileID: 1184667290}
+  retryButton: {fileID: 0}
   fadeOutObject: {fileID: 999934097}
   fadeOutAnimator: {fileID: 999934099}
 --- !u!4 &1599589562
