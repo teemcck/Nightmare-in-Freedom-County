@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerSanity : MonoBehaviour
 {
     [SerializeField] PlayerSanityUI sanityUI;
-    [SerializeField] private float sanityLossPerSecond = 2.5f;
+    [SerializeField] private float sanityLossPerSecond = 0.25f;
     private readonly float maxSanity = 100f;
     private float currentSanity;
     private int currentEmotionIndex;
@@ -39,7 +39,9 @@ public class PlayerSanity : MonoBehaviour
 
     private void TryUpdateEmotion()
     {
-        int newEmotionIndex = Mathf.FloorToInt(currentSanity / emotionIncrement);
+        int newEmotionIndex = Mathf.FloorToInt((currentSanity / maxSanity) 
+            * (sanityUI.GetNumEmotions() - 1));
+
         if (currentEmotionIndex != newEmotionIndex)
         {
             currentEmotionIndex = newEmotionIndex;

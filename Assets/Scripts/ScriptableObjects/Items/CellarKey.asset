@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CellarKey
   m_EditorClassIdentifier: 
   ItemName: Cellar Key
-  ItemSprite: {fileID: 0}
+  ItemSprite: {fileID: -8005209526099008787, guid: 2bcbb5e475634480fa3305f608bc62e1, type: 3}

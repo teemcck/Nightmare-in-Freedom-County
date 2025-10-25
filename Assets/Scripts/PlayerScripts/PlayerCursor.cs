@@ -1,48 +1,50 @@
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class PlayerCursor : MonoBehaviour
 {
-    [SerializeField] private GameObject playerCursor;
     [SerializeField] private Sprite defaultCursor;
     [SerializeField] private Sprite interactableCursor;
-    private Vector3 mouseScreenPosition;
+
+    [SerializeField] private PlayerPosition playerPosition;
+    [SerializeField] private float interactableRange = 10f;
+
     private SpriteRenderer cursorRenderer;
-    private bool updateInteractable, updateDefault = false;
+    private Camera mainCam;
 
     void Start()
     {
-        cursorRenderer = playerCursor.GetComponent<SpriteRenderer>();
+        cursorRenderer = GetComponent<SpriteRenderer>();
+        cursorRenderer.sprite = defaultCursor;
+
+        mainCam = Camera.main;
+        Cursor.visible = false;
     }
 
     void Update()
     {
-        mouseScreenPosition = Input.mousePosition;
-        playerCursor.transform.position = mouseScreenPosition;
+        Vector3 mouseWorldPosition = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = 0f;
+        transform.position = mouseWorldPosition;
 
-        if (updateInteractable && updateDefault)
-        {
-            Debug.LogError("Cursor is both interactable and default");
-        }
-        else if (updateInteractable)
-        {
-            cursorRenderer.sprite = interactableCursor;
-            updateInteractable = false;
-        }
-        else if (updateDefault)
-        {
-            cursorRenderer.sprite = defaultCursor;
-            updateDefault = false;
-        }
+        CheckForInteractable(mouseWorldPosition);
     }
 
-    public void SetInteractable()
+    private void CheckForInteractable(Vector3 worldPos)
     {
-        updateInteractable = true;
-    }
+        Collider2D hit = Physics2D.OverlapPoint(worldPos);
+        if (hit != null && hit.TryGetComponent(out FloatingItem item))
+        {
+            Debug.Log("item hit");
+            float distance = Vector2.Distance(playerPosition.GetPosition(), item.transform.position);
 
-    public void SetDefault()
-    {
-        updateDefault = true;
+            if (distance <= interactableRange)
+            {
+                cursorRenderer.sprite = interactableCursor;
+                return;
+            }
+        }
+
+        cursorRenderer.sprite = defaultCursor;
     }
 }

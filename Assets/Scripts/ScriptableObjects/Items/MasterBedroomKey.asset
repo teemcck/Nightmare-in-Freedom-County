@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MasterBedroomKey
   m_EditorClassIdentifier: 
   ItemName: Master Bedroom Key
-  ItemSprite: {fileID: 0}
+  ItemSprite: {fileID: 1806475511580599347, guid: 2bcbb5e475634480fa3305f608bc62e1, type: 3}

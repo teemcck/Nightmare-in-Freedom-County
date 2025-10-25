@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ExitKey
   m_EditorClassIdentifier: 
   ItemName: ExitKey
-  ItemSprite: {fileID: 0}
+  ItemSprite: {fileID: 3702714939540510235, guid: 2bcbb5e475634480fa3305f608bc62e1, type: 3}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692dcbc58052eb24eaf126c2e19ee374, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
-  ItemName: Crude Hammer
-  ItemSprite: {fileID: 0}
+  ItemName: Damp Hammer
+  ItemSprite: {fileID: -1916626597785426241, guid: 2bcbb5e475634480fa3305f608bc62e1, type: 3}

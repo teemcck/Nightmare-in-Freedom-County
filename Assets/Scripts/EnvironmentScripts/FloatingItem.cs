@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class FloatingItem : MonoBehaviour
 {
-    [SerializeField] private static float floatHeight = 0.25f;
-    [SerializeField] private static float floatSpeed = 2f;
+    [SerializeField] private float floatHeight = 0.25f;
+    [SerializeField] private float floatSpeed = 2f;
     [SerializeField] private Item itemInfo;
     private bool doDestroy = false;
 
