@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: f253fa695957c47db85bc26654a16b95
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1564013484629042212
+    second: Furnishing_2_0
+  - first:
+      213: -1963864572057652122
+    second: Furnishing_2_1
+  - first:
+      213: -2306930999433919520
+    second: Furnishing_2_2
+  - first:
+      213: 8987848602238727812
+    second: Furnishing_2_3
+  - first:
+      213: -1943501235442415827
+    second: Furnishing_2_4
+  - first:
+      213: -437743318327540356
+    second: Furnishing_2_5
+  - first:
+      213: -4026864066694178547
+    second: Furnishing_2_6
+  - first:
+      213: 4443494509860730861
+    second: Furnishing_2_7
+  - first:
+      213: -6104498322282590679
+    second: Furnishing_2_8
+  - first:
+      213: 1314227921380505291
+    second: Furnishing_2_9
+  - first:
+      213: 392205529041700055
+    second: Furnishing_2_10
+  - first:
+      213: 7198138663130685188
+    second: Furnishing_2_11
+  - first:
+      213: -4108102962484427834
+    second: Furnishing_2_12
+  - first:
+      213: -7939099110955624137
+    second: Furnishing_2_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Furnishing_2_0
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 843
+        width: 118
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdbd3c0b5028b4ae0800000000000000
+      internalID: -1564013484629042212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_1
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 847
+        width: 82
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6647783a393feb4e0800000000000000
+      internalID: -1963864572057652122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_2
+      rect:
+        serializedVersion: 2
+        x: 1765
+        y: 852
+        width: 82
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e387698a722cffd0800000000000000
+      internalID: -2306930999433919520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_3
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 302
+        width: 124
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4863e6f1fa04bbc70800000000000000
+      internalID: 8987848602238727812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_4
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 367
+        width: 120
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d270ce86ceb4705e0800000000000000
+      internalID: -1943501235442415827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_5
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 524
+        width: 46
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75494075c2dce9f0800000000000000
+      internalID: -437743318327540356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_6
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 600
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0998e17774bd18c0800000000000000
+      internalID: -4026864066694178547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_7
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 506
+        width: 86
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7b5adc6b67aad30800000000000000
+      internalID: 4443494509860730861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_8
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 474
+        width: 119
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ec0607e17784ba0800000000000000
+      internalID: -6104498322282590679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_9
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 307
+        width: 31
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc6f8c7d4531d3210800000000000000
+      internalID: 1314227921380505291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_10
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 265
+        width: 90
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d48975c9d4617500800000000000000
+      internalID: 392205529041700055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_11
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 266
+        width: 90
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40fd8eb0afce4e360800000000000000
+      internalID: 7198138663130685188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_12
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 101
+        width: 78
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c3c26c0f161df6c0800000000000000
+      internalID: -4108102962484427834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Furnishing_2_13
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 160
+        width: 85
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739ded6fb67a2d190800000000000000
+      internalID: -7939099110955624137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Furnishing_2_0: -1564013484629042212
+      Furnishing_2_1: -1963864572057652122
+      Furnishing_2_10: 392205529041700055
+      Furnishing_2_11: 7198138663130685188
+      Furnishing_2_12: -4108102962484427834
+      Furnishing_2_13: -7939099110955624137
+      Furnishing_2_2: -2306930999433919520
+      Furnishing_2_3: 8987848602238727812
+      Furnishing_2_4: -1943501235442415827
+      Furnishing_2_5: -437743318327540356
+      Furnishing_2_6: -4026864066694178547
+      Furnishing_2_7: 4443494509860730861
+      Furnishing_2_8: -6104498322282590679
+      Furnishing_2_9: 1314227921380505291
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
