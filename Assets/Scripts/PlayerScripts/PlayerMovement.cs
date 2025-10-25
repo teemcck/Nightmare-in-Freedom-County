@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {

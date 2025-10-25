@@ -19,7 +19,7 @@ public class MapHandler : MonoBehaviour
     // Store origin point for each location.
     private Dictionary<Location, Vector2> locationCordinates = new()
     {
-        { Location.UpperFloor, new Vector2(0f, 0f) }, // 0,0 is placeholder for now.
+        { Location.UpperFloor, new Vector2(0f, 0f) },
         { Location.MainFloor, new Vector2(0f, 0f) },
         { Location.ExitHall, new Vector2(0f, 0f) },
         { Location.Celler, new Vector2(0f, 0f) },
@@ -37,7 +37,7 @@ public class MapHandler : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
+
         instance = this;
     }
     
