@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 730316345459972195, guid: d21e557a1f06b4e959b5831dbecdc868, type: 3}
+  m_Sprite: {fileID: 730316345459972195, guid: 14c9708537ba99f40a722af64f78938a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 717124289879080820, guid: d21e557a1f06b4e959b5831dbecdc868, type: 3}
+  m_Sprite: {fileID: 717124289879080820, guid: 14c9708537ba99f40a722af64f78938a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 730316345459972195, guid: d21e557a1f06b4e959b5831dbecdc868, type: 3}
+  m_Sprite: {fileID: 730316345459972195, guid: 14c9708537ba99f40a722af64f78938a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1153,14 +1153,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1599589560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b32ce4a735fea4933a847031ca929c85, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f131145176d6f74fb01a3b686fba144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hearts:
   - {fileID: 195896363}
   - {fileID: 731483235}
   - {fileID: 667940355}
-  brokenHeartSprite: {fileID: 717124289879080820, guid: d21e557a1f06b4e959b5831dbecdc868, type: 3}
+  brokenHeartSprite: {fileID: 717124289879080820, guid: 14c9708537ba99f40a722af64f78938a, type: 3}
   heartToBreak: 1
   fadeOutObject: {fileID: 999934097}
   fadeOutAnimator: {fileID: 999934099}

@@ -381,8 +381,8 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5f9524295adf24a2ab32d6eb854941bf, type: 3}
-  m_Resource: {fileID: 8300000, guid: 5f9524295adf24a2ab32d6eb854941bf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8947dac25c33259409318dd8e8976793, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8947dac25c33259409318dd8e8976793, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e5a5bcb6453ad46b2bb9d4372cbaa947, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 65eb49e58cba22e4cbc246acd157e2fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -606,7 +606,7 @@ Animator:
   m_GameObject: {fileID: 1548085121}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9ca7af572b0064d58871a5bdefde8ad1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 476f888dea1bd214798a32178600670a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -697,19 +697,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1599589560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b3834deba8f848fca82d425eb157153, type: 3}
+  m_Script: {fileID: 11500000, guid: ae2f94374d8b4a242a249b062755107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   comicPanelImage: {fileID: 1374884178}
   comicSprites:
-  - {fileID: 21300000, guid: e5a5bcb6453ad46b2bb9d4372cbaa947, type: 3}
-  - {fileID: 21300000, guid: f7c1f46c23d2e4e30ae7ce4b33d00811, type: 3}
-  - {fileID: 21300000, guid: a5cecdf625f4642ddac72ed07e5eacdd, type: 3}
+  - {fileID: 21300000, guid: 65eb49e58cba22e4cbc246acd157e2fa, type: 3}
+  - {fileID: 21300000, guid: a63e5706225147343a4267d2af95a613, type: 3}
+  - {fileID: 21300000, guid: 8ff05b2d811865f46be1cb70545d786b, type: 3}
   fadeOutObject: {fileID: 999934097}
   fadeOutAnimator: {fileID: 999934099}
   fadeInObject: {fileID: 1548085121}
   fadeInAnimator: {fileID: 1548085123}
-  nextSceneIndex: 1
+  nextSceneIndex: 2
 --- !u!1 &1794689510
 GameObject:
   m_ObjectHideFlags: 0

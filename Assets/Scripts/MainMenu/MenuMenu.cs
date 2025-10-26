@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour
             fadeOutObject.SetActive(false);
         }
 
-        StartCoroutine(FadeAndLoadScene(1)); // GameStartScene
+        StartCoroutine(FadeAndLoadScene(0)); // GameStartScene
     }
 
     public void QuitGame()

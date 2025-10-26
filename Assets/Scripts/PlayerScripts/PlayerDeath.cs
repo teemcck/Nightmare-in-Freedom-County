@@ -6,22 +6,27 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private int ThreeHeartScene = 0;
     [SerializeField] private int TwoHeartScene = 0;
     [SerializeField] private int OneHeartScene = 0;
-    [SerializeField] private PlayerHealth playerHealth;
+    private PlayerHealth playerHealth;
+
+    void Start()
+    {
+        playerHealth = FindFirstObjectByType<PlayerHealth>();
+    }
 
     public void TriggerPlayerDeath()
     {
         playerHealth.CurrentPlayerHealth -= 1;
         if (playerHealth.CurrentPlayerHealth == 2)
         {
-            SceneManager.SetActiveScene(SceneManager.GetSceneAt(ThreeHeartScene));
+            SceneManager.LoadScene(ThreeHeartScene);
         }
         else if (playerHealth.CurrentPlayerHealth == 1)
         {
-            SceneManager.SetActiveScene(SceneManager.GetSceneAt(TwoHeartScene));
+            SceneManager.LoadScene(TwoHeartScene);
         }
         else if (playerHealth.CurrentPlayerHealth <= 0)
         {
-            SceneManager.SetActiveScene(SceneManager.GetSceneAt(OneHeartScene));
+            SceneManager.LoadScene(OneHeartScene);
         }
     }
 }

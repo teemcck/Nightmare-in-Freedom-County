@@ -21,15 +21,9 @@ public class PlayerHealth : MonoBehaviour
 
         ResetPlayerHealth();
     }
-
-    private void OnDestroy()
+    
+    private void OnSceneLoaded(Scene scene)
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // If this is the "start" scene (e.g., main menu), reset health
         if (scene.name == "MainMenu" || scene.buildIndex == 0)
         {
             ResetPlayerHealth();
