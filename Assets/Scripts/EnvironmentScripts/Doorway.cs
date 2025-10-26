@@ -26,10 +26,9 @@ public class Doorway : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
-        if ((gameObject.CompareTag("Player") ||
-            gameObject.CompareTag("Enemy")) && isUnlocked)
+        if (gameObject.CompareTag("Player") && isUnlocked)
         {
-            collision.gameObject.transform.position = connection.GetDestination();
+            collision.gameObject.transform.position = connection.GetDestination();  
         }
     }
 }

@@ -6,6 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class FloridamanAI : MonoBehaviour
 {
+    [System.Serializable]
+    public class Room
+    {
+        public string roomName;
+        public List<Transform> waypoints = new List<Transform>();
+    }
+
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 2f;
 
@@ -13,9 +20,8 @@ public class FloridamanAI : MonoBehaviour
     [SerializeField] private float detectionRadius = 5f;
     [SerializeField] private Transform player;
 
-    [Header("Patrol Points (ordered)")]
-    [SerializeField] private List<Transform> patrolPoints = new List<Transform>();
-    [SerializeField] private float maxPatrolDistance = 10f;
+    [Header("Rooms & Waypoints (ordered)")]
+    [SerializeField] private List<Room> rooms = new List<Room>();
 
     [Header("Sprites")]
     [SerializeField] private List<Sprite> walkSprites;
@@ -27,10 +33,11 @@ public class FloridamanAI : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private Coroutine walkAnimRoutine;
-    private int currentPointIndex = 0;
-    private int patrolDirection = 1;
-    private bool isChasing = false;
+    private int currentRoomIndex = 0;
+    private int currentWaypointIndex = 0;
+    private int direction = 1; // 1 = forward, -1 = backward
     private bool isHit = false;
+    private bool isChasing = false;
 
     private void Awake()
     {
@@ -40,12 +47,13 @@ public class FloridamanAI : MonoBehaviour
 
     private void Start()
     {
-        if (patrolPoints.Count == 0)
+        if (rooms.Count == 0 || rooms[0].waypoints.Count == 0)
         {
-            Debug.LogError("[FloridamanAI] ERROR: No patrol points assigned!");
             enabled = false;
             return;
         }
+
+        transform.position = rooms[0].waypoints[0].position;
 
         walkAnimRoutine = StartCoroutine(WalkAnimation());
     }
@@ -54,48 +62,66 @@ public class FloridamanAI : MonoBehaviour
     {
         if (isHit) return;
 
-        Vector2 targetPos = PlayerInRange() ? (Vector2)player.position : (Vector2)patrolPoints[currentPointIndex].position;
+        Vector2 targetPos = GetCurrentTargetPosition();
         isChasing = PlayerInRange();
 
         Vector2 currentPos = rb.position;
         Vector2 dir = (targetPos - currentPos).normalized;
 
-        if (dir == Vector2.zero)
-            return;
+        if (dir == Vector2.zero) return;
 
         Vector2 newPos = currentPos + dir * moveSpeed * Time.fixedDeltaTime;
 
-        if (!isChasing && Vector2.Distance(currentPos, targetPos) > maxPatrolDistance)
+        if (!isChasing)
         {
-            rb.position = patrolPoints[currentPointIndex].position; // teleport to current point
-            AdvancePatrolPoint();
+            rb.MovePosition(newPos);
+
+            if (Vector2.Distance(currentPos, targetPos) < 0.2f)
+            {
+                AdvanceWaypoint();
+            }
         }
         else
         {
-            rb.MovePosition(newPos);
+            // Chase player if in range
+            rb.MovePosition(currentPos + dir * moveSpeed * Time.fixedDeltaTime);
         }
 
         spriteRenderer.flipX = dir.x > 0;
-
-        if (!isChasing && Vector2.Distance(currentPos, targetPos) < 0.2f)
-        {
-            AdvancePatrolPoint();
-        }
     }
 
-    private void AdvancePatrolPoint()
+    private Vector2 GetCurrentTargetPosition()
     {
-        currentPointIndex += patrolDirection;
+        if (isChasing) return player.position;
+        return rooms[currentRoomIndex].waypoints[currentWaypointIndex].position;
+    }
 
-        if (currentPointIndex >= patrolPoints.Count)
+    private void AdvanceWaypoint()
+    {
+        Room currentRoom = rooms[currentRoomIndex];
+
+        currentWaypointIndex += direction;
+
+        if (currentWaypointIndex >= currentRoom.waypoints.Count || currentWaypointIndex < 0)
         {
-            patrolDirection = -1;
-            currentPointIndex = patrolPoints.Count - 2;
-        }
-        else if (currentPointIndex < 0)
-        {
-            patrolDirection = 1;
-            currentPointIndex = 1;
+            currentRoomIndex += direction;
+
+            if (currentRoomIndex >= rooms.Count)
+            {
+                direction = -1;
+                currentRoomIndex = rooms.Count - 1;
+            }
+            else if (currentRoomIndex < 0)
+            {
+                direction = 1;
+                currentRoomIndex = 0;
+            }
+
+            // Teleport to first waypoint of next room
+            currentRoom = rooms[currentRoomIndex];
+            currentWaypointIndex = direction == 1 ? 0 : currentRoom.waypoints.Count - 1;
+
+            transform.position = currentRoom.waypoints[currentWaypointIndex].position;
         }
     }
 
