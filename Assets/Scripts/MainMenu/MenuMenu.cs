@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
     [Header("Objects")]
     [SerializeField] private GameObject lightning;
     [SerializeField] private AudioSource lightningAudio;
+    [SerializeField] private AudioSource backgroundMusic;
 
     public void StartGame()
     {
@@ -36,7 +37,7 @@ public class MainMenu : MonoBehaviour
             fadeOutObject.SetActive(false);
         }
 
-        StartCoroutine(FadeAndLoadScene(2)); // GameStartScene
+        StartCoroutine(FadeAndLoadScene(1)); // GameStartScene
     }
 
     public void QuitGame()
@@ -59,9 +60,16 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator FadeAndLoadGame(int sceneIndex)
     {
+    
         if (fadeOutObject != null && fadeOutAnimator != null && lightning != null)
         {
 
+            if (backgroundMusic != null && backgroundMusic.isPlaying)
+            {
+                backgroundMusic.Stop();
+            }
+
+            // ⚡️ Play lightning
             lightning.SetActive(true);
 
             if (lightningAudio != null)
@@ -74,7 +82,6 @@ public class MainMenu : MonoBehaviour
             fadeOutObject.SetActive(true);
             fadeOutAnimator.Play("FadeOut_Sequence");
 
- 
             yield return new WaitForSeconds(2f);
         }
 
