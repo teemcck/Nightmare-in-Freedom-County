@@ -18,5 +18,10 @@ public class PlayerInventoryUI : MonoBehaviour
         itemDisplay.GetComponent<Image>().sprite = newItem;
     }
 
+    public void ResetItemDisplay()
+    {
+        itemDisplay.SetActive(false);
+    }
+
     // Add an effect to item slot when item is picked up later.
 }

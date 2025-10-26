@@ -24,6 +24,12 @@ public class PlayerInventory : MonoBehaviour
         invUI.UpdateItemDisplay(heldItem.ItemSprite);
     }
 
+    public void ResetHeldItem()
+    {
+        heldItem = null;
+        invUI.ResetItemDisplay();
+    }
+
     public bool TryGetHeldItem(out Item item)
     {
         if (heldItem != null)

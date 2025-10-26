@@ -497,7 +497,6 @@ GameObject:
   m_Component:
   - component: {fileID: 89754279}
   - component: {fileID: 89754278}
-  - component: {fileID: 89754280}
   m_Layer: 0
   m_Name: CurtainClosed
   m_TagString: Untagged
@@ -575,24 +574,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 152476249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &89754280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89754277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9756907dc97dec44bd34a923f0a4f32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactableRange: 1.75
-  searchTime: 2
-  playerPosition: {fileID: 931613658}
-  particles: {fileID: 0}
-  unsearchedObject: {fileID: 0}
-  searchedObject: {fileID: 0}
 --- !u!1 &99283055
 GameObject:
   m_ObjectHideFlags: 0
@@ -4836,7 +4817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64c74536216b5e41adea6d5143a7b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchSlider: {fileID: 0}
+  searchSlider: {fileID: 1521823110}
 --- !u!1 &649962137
 GameObject:
   m_ObjectHideFlags: 0
@@ -5034,9 +5015,9 @@ GameObject:
   m_Component:
   - component: {fileID: 722970138}
   - component: {fileID: 722970139}
-  - component: {fileID: 722970142}
   - component: {fileID: 722970141}
   - component: {fileID: 722970140}
+  - component: {fileID: 722970142}
   m_Layer: 0
   m_Name: Fridge_Closed
   m_TagString: Untagged
@@ -5053,7 +5034,7 @@ Transform:
   m_GameObject: {fileID: 722970137}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2249985, y: 1.745, z: 0}
+  m_LocalPosition: {x: 1.2249985, y: 1.745, z: -1}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1.8255}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9917,24 +9898,52 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &722970142
-MonoBehaviour:
+--- !u!61 &722970142
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722970137}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9756907dc97dec44bd34a923f0a4f32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactableRange: 1.75
-  searchTime: 2
-  playerPosition: {fileID: 931613658}
-  particles: {fileID: 0}
-  unsearchedObject: {fileID: 0}
-  searchedObject: {fileID: 0}
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.82, y: 1.52}
+    newSize: {x: 0.82, y: 1.52}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.82, y: 1.52}
+  m_EdgeRadius: 0
 --- !u!1 &725923577
 GameObject:
   m_ObjectHideFlags: 0
@@ -14784,8 +14793,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bf076dfe643704c85d61dd8cb9286c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDisplay: {fileID: 1640092286}
-  itemSlot: {fileID: 304948715}
+  itemDisplay: {fileID: 1640092284}
+  itemSlot: {fileID: 304948713}
 --- !u!1 &1640092284
 GameObject:
   m_ObjectHideFlags: 0
@@ -16999,12 +17008,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9756907dc97dec44bd34a923f0a4f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableRange: 1.75
+  interactableRange: 3
   searchTime: 2
   playerPosition: {fileID: 931613658}
-  particles: {fileID: 722970141}
   unsearchedObject: {fileID: 722970137}
   searchedObject: {fileID: 1702507997}
+  playerSearch: {fileID: 931613659}
+  itemInfo: {fileID: 11400000, guid: 9d1936ea08877214dae3574c66877951, type: 2}
 --- !u!1 &2010143554
 GameObject:
   m_ObjectHideFlags: 0

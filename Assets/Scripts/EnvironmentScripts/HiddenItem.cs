@@ -4,7 +4,7 @@ using UnityEngine;
 public class HiddenItem : MonoBehaviour
 {
     [SerializeField] private float interactableRange = 3f;
-    [SerializeField] private float searchTime = 2f;
+    private float searchTime = 2f; // Do not edit.
     [SerializeField] private PlayerPosition playerPosition;
     [SerializeField] private GameObject unsearchedObject;
     [SerializeField] private GameObject searchedObject;
