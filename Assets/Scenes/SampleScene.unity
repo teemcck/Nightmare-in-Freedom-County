@@ -22139,7 +22139,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultPlayerSpeed: 3
   slownessSpeedDecrease: 0.4
+  playerSprites: []
+  animationSpeed: 0.15
   walkingAudio: {fileID: 931613660}
+  spriteRenderer: {fileID: 556501373}
 --- !u!4 &931613655
 Transform:
   m_ObjectHideFlags: 0
@@ -23046,6 +23049,7 @@ MonoBehaviour:
   unsearchedObject: {fileID: 242220252}
   searchedObject: {fileID: 774276542}
   playerSearch: {fileID: 931613659}
+  itemOffset: {x: 0, y: 0, z: 0}
   itemInfo: {fileID: 11400000, guid: b901b37326b0e8a45a7935fadc0d76a5, type: 2}
 --- !u!1 &1187054117
 GameObject:
@@ -29042,6 +29046,7 @@ MonoBehaviour:
   unsearchedObject: {fileID: 211596257}
   searchedObject: {fileID: 1051063020}
   playerSearch: {fileID: 931613659}
+  itemOffset: {x: 0, y: 0, z: 0}
   itemInfo: {fileID: 11400000, guid: 2d353d25de1fd194894ef660d1b845a1, type: 2}
 --- !u!1 &1380611324
 GameObject:
@@ -30385,6 +30390,7 @@ MonoBehaviour:
   unsearchedObject: {fileID: 593497604}
   searchedObject: {fileID: 116010728}
   playerSearch: {fileID: 931613659}
+  itemOffset: {x: 0, y: 0, z: 0}
   itemInfo: {fileID: 11400000, guid: 8c0d72cf6273344419ee57e26c0af588, type: 2}
 --- !u!1 &1552567901
 GameObject:
@@ -38500,6 +38506,7 @@ MonoBehaviour:
   unsearchedObject: {fileID: 722970137}
   searchedObject: {fileID: 1702507997}
   playerSearch: {fileID: 931613659}
+  itemOffset: {x: 0, y: 0, z: 0}
   itemInfo: {fileID: 11400000, guid: b4177b2f3f657544db3114e0c7c2c301, type: 2}
 --- !u!1 &2010143554
 GameObject:
