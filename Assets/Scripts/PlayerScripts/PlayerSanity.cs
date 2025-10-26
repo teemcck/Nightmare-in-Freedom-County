@@ -14,12 +14,11 @@ public class PlayerSanity : MonoBehaviour
     {
         ModifySanity(-sanityLossPerSecond * Time.deltaTime);
     }
-
     void Start()
     {
         currentSanity = maxSanity;
         currentEmotionIndex = sanityUI.GetNumEmotions() - 1;
-        sanityUI.InitializeSanityBar(maxSanity, currentSanity);
+        sanityUI.InitializeSanityBar(maxSanity);
         emotionIncrement = maxSanity / sanityUI.GetNumEmotions();
     }
 

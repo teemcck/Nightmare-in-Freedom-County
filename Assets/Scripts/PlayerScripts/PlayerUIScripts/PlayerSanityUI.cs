@@ -65,10 +65,10 @@ public class PlayerSanityUI : MonoBehaviour
         ApplyShake();
     }
 
-    public void InitializeSanityBar(float maxSanity, float currentSanity)
+    public void InitializeSanityBar(float maxSanity)
     {
         sanitySlider.maxValue = maxSanity;
-        sanitySlider.value = currentSanity;
+        sanitySlider.value = maxSanity;
         sanityPercent = 1f;
     }
 
