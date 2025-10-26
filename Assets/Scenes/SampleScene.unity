@@ -1654,7 +1654,7 @@ Transform:
   m_GameObject: {fileID: 211596257}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4960003, y: 0.3555, z: 0}
+  m_LocalPosition: {x: 1.4960003, y: 0.3555, z: -1}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1696,7 +1696,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.15429753, y: 0.07845497}
+  m_Offset: {x: 0.0008971095, y: 0.039676905}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1706,7 +1706,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5614051, y: 2.82309}
+  m_Size: {x: 1.8682059, y: 2.9006462}
   m_EdgeRadius: 0
 --- !u!212 &211596262
 SpriteRenderer:
@@ -1931,6 +1931,7 @@ GameObject:
   - component: {fileID: 242220254}
   - component: {fileID: 242220256}
   - component: {fileID: 242220255}
+  - component: {fileID: 242220257}
   m_Layer: 0
   m_Name: PileOfClothes
   m_TagString: Untagged
@@ -6811,6 +6812,52 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!61 &242220257
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242220252}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.57, y: 0.78}
+    newSize: {x: 1.57, y: 0.78}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.57, y: 0.78}
+  m_EdgeRadius: 0
 --- !u!1 &243688366
 GameObject:
   m_ObjectHideFlags: 0
@@ -14822,7 +14869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64c74536216b5e41adea6d5143a7b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchSlider: {fileID: 0}
+  searchSlider: {fileID: 1521823110}
 --- !u!1 &649962137
 GameObject:
   m_ObjectHideFlags: 0
@@ -19937,7 +19984,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.25006217}
+  m_Offset: {x: 0, y: 0.0005976558}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19947,7 +19994,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.82, y: 1.0198756}
+  m_Size: {x: 0.82, y: 1.5188047}
   m_EdgeRadius: 0
 --- !u!1 &725923577
 GameObject:
@@ -22305,7 +22352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableRange: 3
-  searchTime: 2
   playerPosition: {fileID: 931613658}
   unsearchedObject: {fileID: 242220252}
   searchedObject: {fileID: 774276542}
@@ -28285,7 +28331,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableRange: 1.75
-  searchTime: 2
   playerPosition: {fileID: 931613658}
   unsearchedObject: {fileID: 211596257}
   searchedObject: {fileID: 1051063020}
@@ -29612,7 +29657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableRange: 1.75
-  searchTime: 2
   playerPosition: {fileID: 931613658}
   unsearchedObject: {fileID: 593497604}
   searchedObject: {fileID: 116010728}
@@ -30231,8 +30275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bf076dfe643704c85d61dd8cb9286c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDisplay: {fileID: 0}
-  itemSlot: {fileID: 0}
+  itemDisplay: {fileID: 1640092284}
+  itemSlot: {fileID: 304948713}
 --- !u!1 &1640092284
 GameObject:
   m_ObjectHideFlags: 0
@@ -37471,7 +37515,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableRange: 1.75
-  searchTime: 2
   playerPosition: {fileID: 931613658}
   unsearchedObject: {fileID: 722970137}
   searchedObject: {fileID: 1702507997}
