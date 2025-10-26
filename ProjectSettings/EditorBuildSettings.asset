@@ -10,13 +10,31 @@ EditorBuildSettings:
     guid: b30ec3b3080ac4ae0a0454e88069ad80
   - enabled: 1
     path: Assets/Scenes/Cutscene.unity
-    guid: cb52585827a4f4e9a9229c98a325407f
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    guid: 3504434484559a04094de32615b6ce92
+  - enabled: 1
+    path: Assets/Scenes/TristanTest.unity
+    guid: 2a6fdf9790ae7664ab8066ba51d58980
+  - enabled: 1
+    path: Assets/Scenes/GameOverScenes/GameOverFinal.unity
+    guid: cbd1464e9ad473340b2cb6d7939f2bdb
+  - enabled: 1
+    path: Assets/Scenes/GameOverScenes/GameOverOneLife.unity
+    guid: bcdc3ee4fc651614bb4ca0531650ff7b
   - enabled: 1
     path: Assets/Scenes/GameOverScenes/GameOverThreeLife.unity
-    guid: 88f73bba1ef14419c84bb4e9d9a24756
+    guid: fab689234d8cafb4b85dc931098d8a5e
+  - enabled: 1
+    path: Assets/Scenes/GameOverScenes/GameOverTwoLife.unity
+    guid: 89798e81a87c8f141a98c0a190f528b7
+  - enabled: 1
+    path: Assets/Scenes/EndingScenes/Ending1.unity
+    guid: 9f19d28e8b5fe4f4c99ae9d9a906bd92
+  - enabled: 1
+    path: Assets/Scenes/EndingScenes/Ending2.unity
+    guid: 582ee0dcda53ced4dabe9348b5086cc0
+  - enabled: 1
+    path: Assets/Scenes/EndingScenes/Ending3.unity
+    guid: a174d44a4145c964a90effe700004fdf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
