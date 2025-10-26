@@ -773,7 +773,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1599589563}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: RetryGame
         m_Mode: 1
@@ -1153,18 +1153,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1599589560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c496750b3fbf044df881447e97158fa0, type: 3}
+  m_Script: {fileID: 11500000, guid: b32ce4a735fea4933a847031ca929c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  creditsButton: {fileID: 0}
-  retryButton: {fileID: 1113359480}
+  hearts:
+  - {fileID: 195896363}
+  - {fileID: 731483235}
+  - {fileID: 667940355}
+  brokenHeartSprite: {fileID: 717124289879080820, guid: d21e557a1f06b4e959b5831dbecdc868, type: 3}
+  heartToBreak: 0
   fadeOutObject: {fileID: 999934097}
   fadeOutAnimator: {fileID: 999934099}
-  lightning: {fileID: 0}
-  lightningAudio: {fileID: 0}
-  backgroundMusic: {fileID: 0}
+  sceneToLoad: 2
+  fadeDelay: 2
 --- !u!1 &1765504224
 GameObject:
   m_ObjectHideFlags: 0
