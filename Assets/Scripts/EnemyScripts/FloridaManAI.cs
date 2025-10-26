@@ -28,6 +28,7 @@ public class FloridamanAI : MonoBehaviour
     [SerializeField] private List<Sprite> hitSprites;
     [SerializeField] private float walkAnimSpeed = 0.15f;
     [SerializeField] private float hitAnimSpeed = 0.1f;
+    [SerializeField] private PlayerDeath playerDeath;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -169,8 +170,8 @@ public class FloridamanAI : MonoBehaviour
             yield return new WaitForSeconds(hitAnimSpeed);
         }
 
-        walkAnimRoutine = StartCoroutine(WalkAnimation());
         isHit = false;
+        playerDeath.TriggerPlayerDeath();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
