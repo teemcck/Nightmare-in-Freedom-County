@@ -6,10 +6,17 @@ public class PlayerMovement : MonoBehaviour
     [Range(0.0f, 10.0f), SerializeField] private float defaultPlayerSpeed = 2f;
     [Range(0.0f, 1.0f), SerializeField] private float slownessSpeedDecrease = 0.4f;
 
+
+    // NEW!! Footsteps
+    [SerializeField] private AudioSource walkingAudio;
+
     private float currentPlayerSpeed;
     private bool playerSlowed = false;
     private Rigidbody2D rb;
     private Vector2 movementInput;
+
+    // NEW!!
+    private bool isWalking = false;
 
     void Awake()
     {
@@ -27,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) movementInput.x += 1;
 
         movementInput = movementInput.normalized;
+
+        HandleWalkingAudio(); // NEW!!
     }
 
     void FixedUpdate()
@@ -49,6 +58,38 @@ public class PlayerMovement : MonoBehaviour
         {
             playerSlowed = false;
             currentPlayerSpeed = defaultPlayerSpeed;
+        }
+    }
+
+    private void HandleWalkingAudio()
+    {
+        // Player is moving
+        if (movementInput != Vector2.zero)
+        {
+            if (!isWalking)
+            {
+                isWalking = true;
+
+                if (walkingAudio != null && !walkingAudio.isPlaying)
+                {
+                    walkingAudio.loop = true;
+                    walkingAudio.Play();
+                }
+            }
+        }
+
+    // Player stops moving
+        else
+        {
+            if (isWalking)
+            {
+                isWalking = false;
+
+                if (walkingAudio != null && walkingAudio.isPlaying)
+                {
+                    walkingAudio.Stop();
+                }
+            }
         }
     }
 }
