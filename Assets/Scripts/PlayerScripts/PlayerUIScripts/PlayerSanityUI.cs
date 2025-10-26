@@ -15,16 +15,16 @@ public class PlayerSanityUI : MonoBehaviour
 
     [SerializeField] private List<List<Sprite>> emotions;
 
-    [SerializeField] private float baseSwapInterval = 0.4f;
+    [SerializeField] private float baseSwapInterval = 0.2f;
 
     [SerializeField] private float swapSpeedMultiplier = 3f;
 
-    [SerializeField] private float maxShakeAmount = 5f;
+    [SerializeField] private float maxShakeAmount = 7.5f;
 
     private int currentEmotionIndex = 0;
     private int currentSubEmotionIndex = 0;
     private float swapTimer = 0f;
-    private float sanityPercent = 1f; // 1 = full sanity, 0 = insane
+    private float sanityPercent = 1f;
 
     private Vector3 originalPos;
 

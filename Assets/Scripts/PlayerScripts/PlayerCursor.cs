@@ -7,7 +7,6 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField] private Sprite interactableCursor;
 
     [SerializeField] private PlayerPosition playerPosition;
-    [SerializeField] private float interactableRange = 1.75f;
 
     private SpriteRenderer cursorRenderer;
     private Camera mainCam;
@@ -33,18 +32,12 @@ public class PlayerCursor : MonoBehaviour
     private void CheckForInteractable(Vector3 worldPos)
     {
         Collider2D hit = Physics2D.OverlapPoint(worldPos);
-        if (hit != null && hit.TryGetComponent(out FloatingItem item))
+        if (hit != null && hit.TryGetComponent(out FloatingItem item)
+            && item.IsInteractable())
         {
-            Debug.Log("item hit");
-            float distance = Vector2.Distance(playerPosition.GetPosition(), item.transform.position);
-
-            if (distance <= interactableRange)
-            {
-                cursorRenderer.sprite = interactableCursor;
-                return;
-            }
+            cursorRenderer.sprite = interactableCursor;
+            return;
         }
-
         cursorRenderer.sprite = defaultCursor;
     }
 }

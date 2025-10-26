@@ -4,33 +4,34 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] PlayerInventoryUI invUI;
-    private HeldItem heldItem;
+    private static PlayerInventory instance;
+    private Item heldItem;
 
-    public class HeldItem
+    void Awake()
     {
-        private string name;
-        private Sprite itemSprite;
-
-        public HeldItem(Item item)
+        if (instance != null && instance != this)
         {
-            name = item.ItemName;
-            itemSprite = item.ItemSprite;
+            Destroy(gameObject);
+            return;
         }
 
-        public string GetItemName()
-        {
-            return name;
-        }
-
-        public Sprite GetItemSprite()
-        {
-            return itemSprite;
-        }
+        instance = this;
     }
 
     public void UpdateHeldItem(Item newItem)
     {
-        heldItem = new(newItem);
-        invUI.UpdateItemDisplay(heldItem.GetItemSprite());
+        heldItem = newItem;
+        invUI.UpdateItemDisplay(heldItem.ItemSprite);
+    }
+
+    public bool TryGetHeldItem(out Item item)
+    {
+        if (heldItem != null)
+        {
+            item = heldItem;
+            return true;
+        }
+        item = null;
+        return false;
     }
 }
