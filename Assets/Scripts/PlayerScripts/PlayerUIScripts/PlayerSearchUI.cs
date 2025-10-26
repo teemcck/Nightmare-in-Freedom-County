@@ -6,15 +6,10 @@ public class PlayerSearchUI : MonoBehaviour
 {
     [SerializeField] private Slider searchSlider;
 
-    private void Update()
-    {
-
-    }
-
     public void InitializeSearchBar(float maxSearch)
     {
         searchSlider.maxValue = maxSearch;
-        searchSlider.value = maxSearch;
+        searchSlider.value = 0f;
     }
 
     public void UpdateSearchUI(float newValue)

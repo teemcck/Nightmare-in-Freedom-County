@@ -1,20 +1,24 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HiddenItem : MonoBehaviour
 {
-    [SerializeField] private float interactableRange = 1.75f;
-    [SerializeField] private float searchTime = 2f; // Seconds
+    [SerializeField] private float interactableRange = 3f;
+    [SerializeField] private float searchTime = 2f;
     [SerializeField] private PlayerPosition playerPosition;
-    [SerializeField] private ParticleSystem particles;
     [SerializeField] private GameObject unsearchedObject;
     [SerializeField] private GameObject searchedObject;
+    [SerializeField] private PlayerSearch playerSearch;
     private bool hasBeenSearched = false;
     private float currentSearchTime;
-    private Item itemInfo;
+    [SerializeField] private Item itemInfo;
+    private Camera mainCam;
 
     void Start()
     {
         unsearchedObject.SetActive(true);
+        searchedObject.SetActive(false);
+        mainCam = Camera.main;
     }
 
     public void SetHiddenItem(Item item)
@@ -22,27 +26,48 @@ public class HiddenItem : MonoBehaviour
         itemInfo = item;
     }
 
-    private void OnMouseDown()
+    void Update()
     {
-        if (IsInteractable())
-        {
-            ContinueSearch();
-        }
-    }
+        if (hasBeenSearched) return;
 
-    private void OnMouseUp()
-    {
-        currentSearchTime = 0f;
+        // Not great design but running out of time.
+        Vector3 mouseWorldPos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0f;
+
+        RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
+
+        if (hit.collider != null && hit.collider.transform.IsChildOf(transform))
+        {
+            if (IsInteractable() && Input.GetMouseButton(0))
+            {
+                ContinueSearch();
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                currentSearchTime = 0f;
+                playerSearch.UpdateSearch(currentSearchTime);
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+                currentSearchTime = 0f;
+                playerSearch.UpdateSearch(currentSearchTime);
+            }
+        }
     }
 
     private void ContinueSearch()
     {
         currentSearchTime += Time.deltaTime;
+        playerSearch.UpdateSearch(currentSearchTime);
 
         if (currentSearchTime >= searchTime)
         {
-            Instantiate(itemInfo.ItemPrefab, transform.position, Quaternion.identity);
-            unsearchedObject.SetActive(false); searchedObject.SetActive(true);
+            Instantiate(itemInfo.ItemPrefab, unsearchedObject.transform.position, Quaternion.identity);
+            unsearchedObject.SetActive(false);
+            searchedObject.SetActive(true);
             hasBeenSearched = true;
         }
     }
@@ -50,13 +75,7 @@ public class HiddenItem : MonoBehaviour
     public bool IsInteractable()
     {
         if (hasBeenSearched) return false;
-
-        float distance = Vector2.Distance(playerPosition.GetPosition(), transform.position);
-
-        if (distance <= interactableRange)
-        {
-            return true;
-        }
-        return false;
+        float distance = Vector2.Distance(playerPosition.GetPosition(), unsearchedObject.transform.position);
+        return distance <= interactableRange;
     }
 }

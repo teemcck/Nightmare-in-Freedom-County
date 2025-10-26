@@ -32,12 +32,19 @@ public class PlayerCursor : MonoBehaviour
     private void CheckForInteractable(Vector3 worldPos)
     {
         Collider2D hit = Physics2D.OverlapPoint(worldPos);
-        if (hit != null && hit.TryGetComponent(out FloatingItem item)
-            && item.IsInteractable())
+        if (hit != null && hit.TryGetComponent(out FloatingItem floatingItem)
+            && floatingItem.IsInteractable())
         {
             cursorRenderer.sprite = interactableCursor;
             return;
         }
+        else if (hit != null && hit.transform.parent.TryGetComponent(out HiddenItem hiddenItem)
+            && hiddenItem.IsInteractable())
+        {
+            cursorRenderer.sprite = interactableCursor;
+            return;
+        }
+        
         cursorRenderer.sprite = defaultCursor;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerSearch : MonoBehaviour
 {
     [SerializeField] PlayerSearchUI searchUI;
-    private readonly float maxSearch = 100f;
+    private readonly float maxSearch = 1f;
     private float currentSearch;
 
     void Update()
@@ -18,9 +18,9 @@ public class PlayerSearch : MonoBehaviour
         searchUI.InitializeSearchBar(maxSearch);
     }
 
-    public void ModifySearch(float amount)
+    public void UpdateSearch(float value)
     {
-        currentSearch = Mathf.Clamp(currentSearch + amount, 0, maxSearch);
+        currentSearch = Mathf.Clamp(value, 0, maxSearch);
         searchUI.UpdateSearchUI(currentSearch);
     }
 
