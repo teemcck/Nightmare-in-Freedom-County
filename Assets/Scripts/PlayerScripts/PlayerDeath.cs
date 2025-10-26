@@ -19,7 +19,7 @@ public class PlayerDeath : MonoBehaviour
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneAt(TwoHeartScene));
         }
-        else if (playerHealth.CurrentPlayerHealth == 0)
+        else if (playerHealth.CurrentPlayerHealth <= 0)
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneAt(OneHeartScene));
         }

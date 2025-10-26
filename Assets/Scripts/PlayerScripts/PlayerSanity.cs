@@ -5,6 +5,7 @@ public class PlayerSanity : MonoBehaviour
 {
     [SerializeField] PlayerSanityUI sanityUI;
     [SerializeField] private float sanityLossPerSecond = 0.25f;
+    [SerializeField] private PlayerDeath playerDeath;
     private readonly float maxSanity = 100f;
     private float currentSanity;
     private int currentEmotionIndex;
@@ -25,6 +26,12 @@ public class PlayerSanity : MonoBehaviour
     public void ModifySanity(float amount)
     {
         currentSanity = Mathf.Clamp(currentSanity + amount, 0, maxSanity);
+
+        if (currentSanity <= 0)
+        {
+            playerDeath.TriggerPlayerDeath();
+        }
+        
         sanityUI.UpdateSanityUI(currentSanity);
         // Updates face to the side of sanity bar.
         TryUpdateEmotion();

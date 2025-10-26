@@ -21506,6 +21506,8 @@ GameObject:
   - component: {fileID: 931613652}
   - component: {fileID: 931613659}
   - component: {fileID: 931613660}
+  - component: {fileID: 931613662}
+  - component: {fileID: 931613661}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -21652,6 +21654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sanityUI: {fileID: 749496421}
   sanityLossPerSecond: 2.5
+  playerDeath: {fileID: 0}
 --- !u!114 &931613658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21732,6 +21735,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &931613661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931613651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8565496fa2e3d14c834bce15dcf6cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentPlayerHealth: 0
+--- !u!114 &931613662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931613651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948a09d38324d4045a3867fcf82f6f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThreeHeartScene: 0
+  TwoHeartScene: 0
+  OneHeartScene: 0
+  playerHealth: {fileID: 931613661}
 --- !u!1 &1002142539
 GameObject:
   m_ObjectHideFlags: 0
@@ -29762,7 +29794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 3.39999, y: 0.20000076}
+  m_AnchoredPosition: {x: 3.399994, y: 0.20000076}
   m_SizeDelta: {x: 7, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1552567903
