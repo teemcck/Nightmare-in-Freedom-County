@@ -9,6 +9,7 @@ public class HiddenItem : MonoBehaviour
     [SerializeField] private GameObject unsearchedObject;
     [SerializeField] private GameObject searchedObject;
     [SerializeField] private PlayerSearch playerSearch;
+    [SerializeField] private Vector3 itemOffset;
     private bool hasBeenSearched = false;
     private float currentSearchTime;
     [SerializeField] private Item itemInfo;
@@ -65,7 +66,7 @@ public class HiddenItem : MonoBehaviour
 
         if (currentSearchTime >= searchTime)
         {
-            Instantiate(itemInfo.ItemPrefab, unsearchedObject.transform.position, Quaternion.identity);
+            Instantiate(itemInfo.ItemPrefab, unsearchedObject.transform.position + itemOffset, Quaternion.identity);
             unsearchedObject.SetActive(false);
             searchedObject.SetActive(true);
             hasBeenSearched = true;

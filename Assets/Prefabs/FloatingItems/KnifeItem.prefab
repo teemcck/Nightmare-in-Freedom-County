@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5b7adeff9315d469f526ba30eb3470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableRange: 1.75
+  interactableRange: 2.25
   floatHeight: 0.15
   floatSpeed: 1.5
   itemDisplay: {fileID: 3664703559689474179}

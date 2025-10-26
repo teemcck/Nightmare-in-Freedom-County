@@ -1,17 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Location {
-    UpperFloor,
-    MainFloor,
-    ExitHall,
-    Cellar,
-    Kitchen,
-    Bathroom,
-    Bedroom,
-    MasterBedroom
-}
-
 public class MapHandler : MonoBehaviour
 {
     private static MapHandler instance;
