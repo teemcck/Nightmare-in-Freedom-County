@@ -30,6 +30,16 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(FadeAndLoadGame(1));
     }
 
+    public void BackToMenu() {
+
+        if (fadeOutObject != null)
+        {
+            fadeOutObject.SetActive(false);
+        }
+
+        StartCoroutine(FadeAndLoadScene(0));
+    }
+
     public void RetryGame()
     {
         if (fadeOutObject != null)
